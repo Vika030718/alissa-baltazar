@@ -1,0 +1,29 @@
+{
+    "apiVersion": 3,
+    "name": "alissa/hero",
+    "title": "Hero",
+    "category": "design",
+    "icon": "cover-image",
+    "description": "Homepage hero section",
+    "attributes": {
+        "heading": {
+          "type": "string",
+          "default": ""
+        }
+      },
+    "supports": {
+      "html": false,
+      "multiple": false,
+      "anchor": true,
+      "align": false,
+      "color": {
+        "background": false,
+        "text": false,
+        "gradients": false
+      },
+      "spacing": {
+        "margin": false,
+        "padding": false
+      }
+    }
+  }
