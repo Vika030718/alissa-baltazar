@@ -27,6 +27,22 @@ add_action('enqueue_block_editor_assets', function () {
 }, 100);
 
 /**
+ * Register custom Gutenberg blocks.
+ */
+add_action('init', function () {
+    register_block_type(
+        get_theme_file_path('resources/scripts/blocks/hero'),
+        [
+            'render_callback' => function ($attributes) {
+                return view('blocks.hero', [
+                    'heading' => $attributes['heading'] ?? '',
+                ])->render();
+            },
+        ]
+    );
+});
+
+/**
  * Register the initial theme setup.
  *
  * @return void
