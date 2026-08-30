@@ -1,0 +1,66 @@
+@use '../settings/variables' as v;
+
+.site-header {
+    width: 100%;
+    background: v.$color-bg-dark;
+    color: v.$color-text;
+    border-bottom: 1px solid v.$color-border;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        align-items: center;
+        gap: 3rem;
+
+        width: min(100% - (v.$page-gutter * 2), v.$container-max);
+        margin-inline: auto;
+        padding-block: 1.25rem;
+    }
+
+    &__brand,
+    &__nav,
+    &__inquire {
+        color: inherit;
+    }
+
+    &__brand,
+    &__inquire,
+    &__menu a {
+        text-decoration: none;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        a {
+            color: v.$color-text-muted;
+            transition: color v.$transition-base;
+
+            &:hover,
+            &:focus-visible {
+                color: v.$color-text;
+            }
+        }
+    }
+
+    &__inquire {
+        padding: 0.65rem 1.5rem;
+        border: 1px solid v.$color-border;
+        border-radius: 999px;
+        transition:
+            color v.$transition-base,
+            border-color v.$transition-base;
+
+        &:hover,
+        &:focus-visible {
+            color: v.$color-accent;
+            border-color: v.$color-accent;
+        }
+    }
+}

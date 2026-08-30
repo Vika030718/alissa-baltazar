@@ -1,0 +1,53 @@
+@use '../settings/variables' as v;
+
+.hero {
+    background: v.$color-bg;
+    color: v.$color-text;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: center;
+
+        width: min(100% - (v.$page-gutter * 2), v.$container-max);
+        margin-inline: auto;
+    }
+
+    &__content {
+        padding-block: 5rem;
+        padding-right: 3.75rem;
+    }
+
+    &__media {
+        padding-block: 2rem;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__eyebrow {
+        color: v.$color-accent;
+    }
+
+    &__heading {
+        color: v.$color-text;
+    }
+
+    &__description {
+        color: v.$color-text-muted;
+    }
+
+    &__cta {
+        color: v.$color-text;
+        text-decoration: none;
+        transition: color v.$transition-base;
+
+        &:hover,
+        &:focus-visible {
+            color: v.$color-accent;
+        }
+    }
+}

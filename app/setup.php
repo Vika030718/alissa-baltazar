@@ -35,7 +35,12 @@ add_action('init', function () {
         [
             'render_callback' => function ($attributes) {
                 return view('blocks.hero', [
+                    'eyebrow' => $attributes['eyebrow'] ?? '',
                     'heading' => $attributes['heading'] ?? '',
+                    'ctaText' => $attributes['ctaText'] ?? '',
+                    'ctaUrl' => $attributes['ctaUrl'] ?? '',
+                    'imageId' => $attributes['imageId'] ?? null,
+                    'description' => $attributes['description'] ?? '',
                 ])->render();
             },
         ]

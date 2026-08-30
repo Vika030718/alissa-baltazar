@@ -6,24 +6,48 @@
     "icon": "cover-image",
     "description": "Homepage hero section",
     "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": ""
+        },
         "heading": {
-          "type": "string",
-          "default": ""
+            "type": "string",
+            "default": ""
+        },
+        "ctaText": {
+            "type": "string",
+            "default": ""
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
         }
-      },
+    },
     "supports": {
-      "html": false,
-      "multiple": false,
-      "anchor": true,
-      "align": false,
-      "color": {
-        "background": false,
-        "text": false,
-        "gradients": false
-      },
-      "spacing": {
-        "margin": false,
-        "padding": false
-      }
+        "html": false,
+        "multiple": false,
+        "anchor": true,
+        "align": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "gradients": false
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false
+        }
     }
-  }
+}

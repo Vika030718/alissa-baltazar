@@ -1,11 +1,27 @@
-<header class="banner">
-  <a class="brand" href="{{ home_url('/') }}">
-    {!! $siteName !!}
-  </a>
+<header class="site-header">
+  <div class="site-header__inner">
 
-  @if (has_nav_menu('primary_navigation'))
-    <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-      {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-    </nav>
-  @endif
+    <a class="site-header__brand" href="{{ home_url('/') }}">
+      {!! $siteName !!}
+    </a>
+
+    @if (has_nav_menu('primary_navigation'))
+      <nav
+        class="site-header__nav"
+        aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}"
+      >
+        {!! wp_nav_menu([
+          'theme_location' => 'primary_navigation',
+          'menu_class' => 'site-header__menu',
+          'container' => false,
+          'echo' => false,
+        ]) !!}
+      </nav>
+    @endif
+
+    <a class="site-header__inquire" href="{{ home_url('/contact/') }}">
+      Inquire
+    </a>
+
+  </div>
 </header>
