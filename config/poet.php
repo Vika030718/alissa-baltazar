@@ -13,15 +13,24 @@ return [
     */
 
     'post' => [
-        'book' => [
-            'enter_title_here' => 'Enter book title',
-            'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+        'story' => [
+            'enter_title_here' => 'Enter story title',
+            'menu_icon' => 'dashicons-format-gallery',
+            'supports' => [
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail',
+                'revisions',
+            ],
             'show_in_rest' => true,
-            'has_archive' => false,
+            'has_archive' => true,
+            'rewrite' => [
+                'slug' => 'stories',
+            ],
             'labels' => [
-                'singular' => 'Book',
-                'plural' => 'Books',
+                'singular' => 'Story',
+                'plural' => 'Stories',
             ],
         ],
     ],
@@ -37,9 +46,17 @@ return [
     */
 
     'taxonomy' => [
-        'genre' => [
-            'links' => ['book'],
-            'meta_box' => 'radio',
+        'shoot_type' => [
+            'links' => ['story'],
+            'hierarchical' => true,
+            'show_in_rest' => true,
+            'rewrite' => [
+                'slug' => 'shoot-type',
+            ],
+            'labels' => [
+                'singular' => 'Shoot Type',
+                'plural' => 'Shoot Types',
+            ],
         ],
     ],
 

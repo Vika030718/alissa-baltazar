@@ -1,0 +1,53 @@
+@use '../settings/variables' as v;
+
+.stats {
+    background: v.$color-bg;
+    color: v.$color-text;
+    border-top: 1px solid v.$color-border;
+    border-bottom: 1px solid v.$color-border;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        width: min(100% - (v.$page-gutter * 2), v.$container-max);
+        margin-inline: auto;
+    }
+
+    &__item {
+        padding: 2.5rem 2rem;
+
+        &:not(:last-child) {
+            border-right: 1px solid v.$color-border;
+        }
+    }
+
+    &__value {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        color: v.$color-text;
+    }
+
+    &__label {
+        font-size: 0.625rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: v.$color-text-muted;
+    }
+
+    @media (max-width: 768px) {
+        &__inner {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__item {
+            &:nth-child(2) {
+                border-right: 0;
+            }
+
+            &:nth-child(-n + 2) {
+                border-bottom: 1px solid v.$color-border;
+            }
+        }
+    }
+}

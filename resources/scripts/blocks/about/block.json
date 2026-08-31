@@ -1,0 +1,59 @@
+{
+    "apiVersion": 3,
+    "name": "alissa/about",
+    "title": "About Alissa",
+    "category": "design",
+    "icon": "admin-users",
+    "description": "Photographer introduction section",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": "Meet Alissa"
+        },
+        "heading": {
+            "type": "string",
+            "default": "A calm presence with an editorial eye."
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "location": {
+            "type": "string",
+            "default": ""
+        },
+        "ctaText": {
+            "type": "string",
+            "default": "More About Alissa"
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "quote": {
+            "type": "string",
+            "default": ""
+        },
+        "imageId": {
+            "type": "number"
+        },
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "multiple": false,
+        "align": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "gradients": false
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false
+        }
+    }
+}

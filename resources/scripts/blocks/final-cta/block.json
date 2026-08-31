@@ -1,0 +1,43 @@
+{
+    "apiVersion": 3,
+    "name": "alissa/final-cta",
+    "title": "Final CTA",
+    "category": "design",
+    "icon": "megaphone",
+    "description": "Final call to action section",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": "Start a conversation"
+        },
+        "heading": {
+            "type": "string",
+            "default": "Your story deserves to be remembered beautifully."
+        },
+        "description": {
+            "type": "string",
+            "default": "Share your date, location and what you are dreaming up."
+        },
+        "ctaText": {
+            "type": "string",
+            "default": "Check your date"
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "align": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "gradients": false
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false
+        }
+    }
+}

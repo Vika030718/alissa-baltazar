@@ -1,6 +1,14 @@
 @use 'sections/header';
 @use 'sections/footer';
 @use 'blocks/hero';
+@use 'blocks/stats';
+@use 'blocks/philosophy';
+@use 'blocks/selected-work';
+@use 'blocks/about';
+@use 'blocks/testimonials';
+@use 'blocks/journal';
+@use 'blocks/final-cta';
+@use 'pages/story';
 
 @tailwind base;
 @tailwind components;

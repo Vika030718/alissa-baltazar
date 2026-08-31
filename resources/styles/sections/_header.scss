@@ -6,6 +6,18 @@
     color: v.$color-text;
     border-bottom: 1px solid v.$color-border;
 
+    &__brand {
+        .custom-logo-link {
+            display: inline-block;
+        }
+
+        .custom-logo {
+            display: block;
+            width: 480px;
+            height: auto;
+        }
+    }
+
     &__inner {
         display: grid;
         grid-template-columns: 1fr auto auto;

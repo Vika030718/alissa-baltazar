@@ -1,0 +1,45 @@
+{
+    "apiVersion": 3,
+    "name": "alissa/stats",
+    "title": "Stats",
+    "category": "design",
+    "icon": "chart-bar",
+    "description": "Photography statistics section",
+    "attributes": {
+        "stats": {
+            "type": "array",
+            "default": [
+                {
+                    "value": "15",
+                    "label": "Years of experience"
+                },
+                {
+                    "value": "60+",
+                    "label": "Weddings photographed"
+                },
+                {
+                    "value": "5.0",
+                    "label": "Google rating"
+                },
+                {
+                    "value": "47",
+                    "label": "Google reviews"
+                }
+            ]
+        }
+    },
+    "supports": {
+        "html": false,
+        "multiple": false,
+        "align": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "gradients": false
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false
+        }
+    }
+}

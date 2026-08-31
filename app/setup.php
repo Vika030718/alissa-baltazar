@@ -29,6 +29,7 @@ add_action('enqueue_block_editor_assets', function () {
 /**
  * Register custom Gutenberg blocks.
  */
+
 add_action('init', function () {
     register_block_type(
         get_theme_file_path('resources/scripts/blocks/hero'),
@@ -37,16 +38,165 @@ add_action('init', function () {
                 return view('blocks.hero', [
                     'eyebrow' => $attributes['eyebrow'] ?? '',
                     'heading' => $attributes['heading'] ?? '',
+                    'description' => $attributes['description'] ?? '',
                     'ctaText' => $attributes['ctaText'] ?? '',
                     'ctaUrl' => $attributes['ctaUrl'] ?? '',
                     'imageId' => $attributes['imageId'] ?? null,
-                    'description' => $attributes['description'] ?? '',
+                ])->render();
+            },
+        ]
+    );
+
+    register_block_type(
+        get_theme_file_path('resources/scripts/blocks/stats'),
+        [
+            'render_callback' => function ($attributes) {
+                return view('blocks.stats', [
+                    'stats' => $attributes['stats'] ?? [],
                 ])->render();
             },
         ]
     );
 });
 
+register_block_type(
+    get_theme_file_path('resources/scripts/blocks/philosophy'),
+    [
+        'render_callback' => function ($attributes) {
+            return view('blocks.philosophy', [
+                'eyebrow' => $attributes['eyebrow'] ?? '',
+                'statement' => $attributes['statement'] ?? '',
+            ])->render();
+        },
+    ]
+);
+
+register_block_type(
+    get_theme_file_path('resources/scripts/blocks/selected-work'),
+    [
+        'render_callback' => function ($attributes) {
+            $storyIds = array_values(array_filter([
+                $attributes['story1'] ?? 0,
+                $attributes['story2'] ?? 0,
+                $attributes['story3'] ?? 0,
+            ]));
+
+            $posts = [];
+
+            if ($storyIds) {
+                $posts = get_posts([
+                    'post_type' => 'story',
+                    'post__in' => $storyIds,
+                    'orderby' => 'post__in',
+                    'posts_per_page' => 3,
+                ]);
+            }
+
+            $stories = array_map(function ($story) {
+                $terms = get_the_terms($story->ID, 'shoot_type');
+
+                return [
+                    'title' => get_the_title($story),
+                    'url' => get_permalink($story),
+                    'imageId' => get_post_thumbnail_id($story),
+                    'type' => !empty($terms) && !is_wp_error($terms)
+                        ? $terms[0]->name
+                        : '',
+                ];
+            }, $posts);
+
+            return view('blocks.selected-work', [
+                'eyebrow' => $attributes['eyebrow'] ?? '',
+                'heading' => $attributes['heading'] ?? '',
+                'stories' => $stories,
+            ])->render();
+        },
+    ]
+);
+
+register_block_type(
+    get_theme_file_path('resources/scripts/blocks/about'),
+    [
+        'render_callback' => function ($attributes) {
+            return view('blocks.about', [
+                'eyebrow' => $attributes['eyebrow'] ?? '',
+                'heading' => $attributes['heading'] ?? '',
+                'description' => $attributes['description'] ?? '',
+                'location' => $attributes['location'] ?? '',
+                'ctaText' => $attributes['ctaText'] ?? '',
+                'ctaUrl' => $attributes['ctaUrl'] ?? '',
+                'quote' => $attributes['quote'] ?? '',
+                'imageId' => $attributes['imageId'] ?? null,
+            ])->render();
+        },
+    ]
+);
+
+register_block_type(
+    get_theme_file_path('resources/scripts/blocks/testimonials'),
+    [
+        'render_callback' => function ($attributes) {
+            return view('blocks.testimonials', [
+                'eyebrow' => $attributes['eyebrow'] ?? '',
+                'heading' => $attributes['heading'] ?? '',
+                'rating' => $attributes['rating'] ?? '',
+                'ratingText' => $attributes['ratingText'] ?? '',
+                'reviewsUrl' => $attributes['reviewsUrl'] ?? '',
+                'testimonials' => $attributes['testimonials'] ?? [],
+            ])->render();
+        },
+    ]
+);
+
+register_block_type(
+    get_theme_file_path('resources/scripts/blocks/journal'),
+    [
+        'render_callback' => function ($attributes) {
+            $posts = get_posts([
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'posts_per_page' => 3,
+                'orderby' => 'date',
+                'order' => 'DESC',
+            ]);
+
+            $posts = array_map(function ($post) {
+                $categories = get_the_category($post->ID);
+
+                return [
+                    'title' => get_the_title($post),
+                    'url' => get_permalink($post),
+                    'excerpt' => get_the_excerpt($post),
+                    'imageId' => get_post_thumbnail_id($post),
+                    'category' => !empty($categories)
+                        ? $categories[0]->name
+                        : '',
+                ];
+            }, $posts);
+
+            return view('blocks.journal', [
+                'eyebrow' => $attributes['eyebrow'] ?? '',
+                'heading' => $attributes['heading'] ?? '',
+                'posts' => $posts,
+            ])->render();
+        },
+    ]
+);
+
+register_block_type(
+    get_theme_file_path('resources/scripts/blocks/final-cta'),
+    [
+        'render_callback' => function ($attributes) {
+            return view('blocks.final-cta', [
+                'eyebrow' => $attributes['eyebrow'] ?? '',
+                'heading' => $attributes['heading'] ?? '',
+                'description' => $attributes['description'] ?? '',
+                'ctaText' => $attributes['ctaText'] ?? '',
+                'ctaUrl' => $attributes['ctaUrl'] ?? '',
+            ])->render();
+        },
+    ]
+);
 /**
  * Register the initial theme setup.
  *
@@ -82,6 +232,14 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
      */
     add_theme_support('title-tag');
+
+
+    add_theme_support('custom-logo', [
+        'height' => 120,
+        'width' => 360,
+        'flex-height' => true,
+        'flex-width' => true,
+    ]);
 
     /**
      * Enable post thumbnail support.
@@ -119,6 +277,7 @@ add_action('after_setup_theme', function () {
      */
     add_theme_support('customize-selective-refresh-widgets');
 }, 20);
+
 
 /**
  * Register the theme sidebars.

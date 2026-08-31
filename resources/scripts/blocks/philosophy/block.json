@@ -1,0 +1,32 @@
+{
+    "apiVersion": 3,
+    "name": "alissa/philosophy",
+    "title": "Philosophy",
+    "category": "design",
+    "icon": "format-quote",
+    "description": "Photography philosophy statement",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": "Photography is painting with light"
+        },
+        "statement": {
+            "type": "string",
+            "default": "Light finds the subject. Shadow gives it depth."
+        }
+    },
+    "supports": {
+        "html": false,
+        "multiple": false,
+        "align": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "gradients": false
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false
+        }
+    }
+}

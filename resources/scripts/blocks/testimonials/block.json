@@ -1,0 +1,64 @@
+{
+    "apiVersion": 3,
+    "name": "alissa/testimonials",
+    "title": "Testimonials",
+    "category": "design",
+    "icon": "format-quote",
+    "description": "Client testimonials and Google rating",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": "Client Experiences"
+        },
+        "heading": {
+            "type": "string",
+            "default": "Kind words from the people in front of the lens"
+        },
+        "rating": {
+            "type": "string",
+            "default": "5.0"
+        },
+        "ratingText": {
+            "type": "string",
+            "default": "on Google · 47 reviews"
+        },
+        "reviewsUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "testimonials": {
+            "type": "array",
+            "default": [
+                {
+                    "quote": "Her calm, creativity, and attention to detail made every shot beautiful.",
+                    "name": "Client Name",
+                    "source": "Google Review"
+                },
+                {
+                    "quote": "The images turned our stunning and perfectly suitable for my media portfolio.",
+                    "name": "Client Name",
+                    "source": "Google Review"
+                },
+                {
+                    "quote": "She made us feel comfortable, confident, and the results blew us away.",
+                    "name": "Client Name",
+                    "source": "Wedding Client"
+                }
+            ]
+        }
+    },
+    "supports": {
+        "html": false,
+        "multiple": false,
+        "align": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "gradients": false
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false
+        }
+    }
+}

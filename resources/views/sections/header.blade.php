@@ -1,9 +1,15 @@
 <header class="site-header">
   <div class="site-header__inner">
 
-    <a class="site-header__brand" href="{{ home_url('/') }}">
-      {!! $siteName !!}
-    </a>
+  <div class="site-header__brand">
+    @if (has_custom_logo())
+      {!! get_custom_logo() !!}
+    @else
+      <a href="{{ home_url('/') }}">
+        {!! $siteName !!}
+      </a>
+    @endif
+  </div>
 
     @if (has_nav_menu('primary_navigation'))
       <nav

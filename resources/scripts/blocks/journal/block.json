@@ -1,0 +1,32 @@
+{
+    "apiVersion": 3,
+    "name": "alissa/journal",
+    "title": "Journal",
+    "category": "design",
+    "icon": "welcome-write-blog",
+    "description": "Latest journal posts",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": "From the Journal"
+        },
+        "heading": {
+            "type": "string",
+            "default": "Stories, places and thoughtful planning"
+        }
+    },
+    "supports": {
+        "html": false,
+        "multiple": false,
+        "align": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "gradients": false
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false
+        }
+    }
+}

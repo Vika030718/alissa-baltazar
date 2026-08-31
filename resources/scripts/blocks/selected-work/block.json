@@ -1,0 +1,44 @@
+{
+    "apiVersion": 3,
+    "name": "alissa/selected-work",
+    "title": "Selected Work",
+    "category": "design",
+    "icon": "images-alt2",
+    "description": "Featured photography stories",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": "Selected Work"
+        },
+        "heading": {
+            "type": "string",
+            "default": "A considered edit of recent stories"
+        },
+        "story1": {
+            "type": "number",
+            "default": 0
+        },
+        "story2": {
+            "type": "number",
+            "default": 0
+        },
+        "story3": {
+            "type": "number",
+            "default": 0
+        }
+    },
+    "supports": {
+        "html": false,
+        "multiple": false,
+        "align": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "gradients": false
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false
+        }
+    }
+}

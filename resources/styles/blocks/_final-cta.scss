@@ -1,0 +1,90 @@
+@use '../settings/variables' as v;
+
+.final-cta {
+    padding-block: 5rem;
+    background: v.$color-bg;
+    color: v.$color-text;
+    border-bottom: 1px solid v.$color-border;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 4rem;
+
+        width: min(100% - (v.$page-gutter * 2),
+                v.$container-max );
+
+        margin-inline: auto;
+        padding-top: 2rem;
+        border-top: 1px solid v.$color-border;
+    }
+
+    &__content {
+        max-width: 720px;
+    }
+
+    &__eyebrow {
+        margin: 0 0 1.25rem;
+
+        color: v.$color-accent;
+        font-size: 0.625rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+    }
+
+    &__heading {
+        max-width: 620px;
+        margin: 0;
+
+        font-family: serif;
+        font-size: clamp(2.25rem, 4vw, 4rem);
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    &__description {
+        margin: 1.25rem 0 0;
+        color: v.$color-text-muted;
+        line-height: 1.6;
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        min-width: 170px;
+        padding: 0.9rem 1.75rem;
+
+        color: v.$color-bg-dark;
+        background: v.$color-accent;
+        border-radius: 999px;
+
+        font-size: 0.625rem;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        transition:
+            opacity v.$transition-base,
+            transform v.$transition-base;
+
+        &:hover,
+        &:focus-visible {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__inner {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        &__button {
+            justify-self: start;
+        }
+    }
+}
