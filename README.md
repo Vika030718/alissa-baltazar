@@ -1,54 +1,42 @@
-<p align="center">
-  <a href="https://roots.io/sage/">
-    <img alt="Sage" src="https://cdn.roots.io/app/uploads/logo-sage.svg" height="100">
-  </a>
-</p>
+# Alissa Baltazar Website
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/sage">
-    <img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/sage?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
+A custom WordPress website built with Sage, using Laravel Blade templates and a modern front-end development workflow.
 
-  <a href="https://github.com/roots/sage/actions/workflows/main.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/sage/main.yml?branch=main&logo=github&label=CI&style=flat-square">
-  </a>
+The project uses a component-based theme structure to keep templates organized, reusable, and maintainable.
 
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square">
-  </a>
-</p>
+## Tech Stack
 
-<p align="center">Advanced WordPress starter theme with Tailwind CSS and Laravel Blade</p>
+- WordPress
+- Sage
+- Laravel Blade
+- Acorn
+- Tailwind CSS
+- Bud
+- PHP
+- JavaScript
 
-<p align="center">
-  <a href="https://roots.io/sage/">Website</a> &nbsp;&nbsp; <a href="https://roots.io/sage/docs/installation/">Documentation</a> &nbsp;&nbsp; <a href="https://github.com/roots/sage/releases">Releases</a> &nbsp;&nbsp; <a href="https://discourse.roots.io/">Community</a>
-</p>
+## Project Overview
 
-## Sponsors
+This project is a custom WordPress theme developed with Sage rather than a traditional pre-built WordPress theme.
 
-Sage is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, please consider [sponsoring Roots](https://github.com/sponsors/roots).
+Sage provides the foundation for a more structured development workflow, while Blade is used to organize templates and reusable view components.
 
-<div align="center">
-<a href="https://k-m.com/"><img src="https://cdn.roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="120" height="90"></a> <a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://www.copiadigital.com/"><img src="https://cdn.roots.io/app/uploads/copia-digital.svg" alt="Copia Digital" width="120" height="90"></a> <a href="https://www.freave.com/"><img src="https://cdn.roots.io/app/uploads/freave.svg" alt="Freave" width="120" height="90"></a> <a href="https://40q.agency/"><img src="https://cdn.roots.io/app/uploads/40q.svg" alt="40Q" width="120" height="90"></a>
-</div>
+The website is currently in active development.
 
-## Overview
+## Development Highlights
 
-Sage is a WordPress starter theme with block editor support.
+- Custom WordPress theme development
+- Blade-based template structure
+- Reusable views and components
+- Responsive front-end implementation
+- Tailwind CSS styling
+- Modern asset build workflow with Bud
+- WordPress content integration
 
-- Harness the power of [Laravel](https://laravel.com) and its available packages thanks to [Acorn](https://github.com/roots/acorn)
-- Clean, efficient theme templating utilizing [Laravel Blade](https://laravel.com/docs/master/blade)
-- Modern frontend development workflow powered by [Bud](https://bud.js.org/)
-- Out of the box support for [Tailwind CSS](https://tailwindcss.com/)
+## My Role
 
-## Getting Started
+I am responsible for the WordPress theme development and front-end implementation of the website, including template structure, reusable components, responsive styling, and integration with WordPress content.
 
-See the [Sage installation documentation](https://roots.io/sage/docs/installation/).
+## Screenshots
 
-## Stay Connected
-
-- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
-- Participate on [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
+Screenshots and additional project details will be added as development progresses.
