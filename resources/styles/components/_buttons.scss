@@ -1,0 +1,43 @@
+@use '../settings/variables' as v;
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: v.$button-padding-y v.$button-padding-x;
+    border: 1px solid transparent;
+    border-radius: v.$control-radius;
+    font-size: v.$font-size-label;
+    letter-spacing: v.$tracking-control;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color v.$transition-base, background-color v.$transition-base, border-color v.$transition-base, opacity v.$transition-base, transform v.$transition-base;
+    &:focus-visible {
+        outline: 2px solid v.$color-accent;
+        outline-offset: 3px;
+    }
+    &--sm {
+        padding: v.$button-padding-y-sm v.$button-padding-x-sm;
+    }
+    &--outline {
+        color: v.$color-text;
+        background: transparent;
+        border-color: v.$color-border;
+        &:hover,
+        &:focus-visible {
+            color: v.$color-accent;
+            border-color: v.$color-accent;
+        }
+    }
+    &--accent {
+        color: v.$color-bg-dark;
+        background: v.$color-accent;
+        border-color: v.$color-accent;
+        &:hover,
+        &:focus-visible {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+    }
+}

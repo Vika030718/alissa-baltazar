@@ -1,18 +1,70 @@
-// Colors
+// Breakpoints — Bootstrap sm / md / lg values
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+// Color
 $color-bg: #171717;
 $color-bg-dark: #111111;
 $color-surface: #2b2320;
-
 $color-text: #e7e2da;
 $color-text-muted: #9a938a;
-
 $color-accent: #b09a29;
-
 $color-border: #3a3830;
-
+// Typography
+$font-display: serif;
+$font-body: inherit;
+$font-weight-regular: 400;
+$font-size-display: clamp(3rem, 5vw, 5.5rem);
+$font-size-page-title: clamp(3rem, 6vw, 6rem);
+$font-size-section: clamp(2rem, 3vw, 3rem);
+$font-size-section-large: clamp(2.25rem, 4vw, 4rem);
+$font-size-statement: clamp(2rem, 3vw, 3.25rem);
+$font-size-card: 1.25rem;
+$font-size-body: 0.875rem;
+$font-size-label: 0.625rem;
+$font-size-label-small: 0.55rem;
+$line-height-display: 0.95;
+$line-height-heading: 1.05;
+$line-height-body: 1.65;
+$tracking-display: -0.02em;
+$tracking-page-title: -0.025em;
+$tracking-label: 0.18em;
+$tracking-control: 0.12em;
+$tracking-link: 0.14em;
+// Spacing
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
 // Layout
 $container-max: 1440px;
+$container-content: 1100px;
+$container-reading: 720px;
 $page-gutter: 3rem;
-
-// Transitions
+$page-gutter-lg: 2rem;
+$page-gutter-md: 1.5rem;
+$page-gutter-sm: 1rem;
+$section-space: 5rem;
+$section-space-lg: 4rem;
+$section-space-md: 3.5rem;
+$section-space-sm: 3rem;
+// Controls
+$control-radius: 999px;
+$button-padding-y: 0.8rem;
+$button-padding-x: 1.75rem;
+$button-padding-y-sm: 0.65rem;
+$button-padding-x-sm: 1.5rem;
+// Motion
 $transition-base: 180ms ease;
+// Layers
+$z-decoration: 0;
+$z-content: 1;
+$z-overlay: 2;

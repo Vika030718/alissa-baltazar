@@ -1,6 +1,5 @@
-<section class="about">
-  <div class="about__inner">
-
+<section class="site-section site-section--spaced site-section--surface about">
+  <div class="site-container about__inner">
     <div class="about__media">
       @if ($imageId)
         {!! wp_get_attachment_image(
@@ -13,21 +12,20 @@
     </div>
 
     <div class="about__content">
-
       @if ($eyebrow)
-        <p class="about__eyebrow">
+        <p class="eyebrow">
           {{ $eyebrow }}
         </p>
       @endif
 
       @if ($heading)
-        <h2 class="about__heading">
+        <h2 class="title title--section-large">
           {{ $heading }}
         </h2>
       @endif
 
       @if ($description)
-        <p class="about__description">
+        <p class="body-copy">
           {{ $description }}
         </p>
       @endif
@@ -39,10 +37,7 @@
       @endif
 
       @if ($ctaText && $ctaUrl)
-        <a
-          href="{{ $ctaUrl }}"
-          class="about__cta"
-        >
+        <a href="{{ $ctaUrl }}" class="button button--outline">
           {{ $ctaText }}
         </a>
       @endif
@@ -52,8 +47,6 @@
           {{ $quote }}
         </blockquote>
       @endif
-
     </div>
-
   </div>
 </section>

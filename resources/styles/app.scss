@@ -1,3 +1,7 @@
+@use 'base/foundation';
+@use 'layout/layout';
+@use 'components/typography';
+@use 'components/buttons';
 @use 'sections/header';
 @use 'sections/footer';
 @use 'blocks/hero';
@@ -9,7 +13,6 @@
 @use 'blocks/journal';
 @use 'blocks/final-cta';
 @use 'pages/story';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

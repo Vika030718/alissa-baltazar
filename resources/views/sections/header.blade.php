@@ -1,15 +1,14 @@
 <header class="site-header">
-  <div class="site-header__inner">
-
-  <div class="site-header__brand">
-    @if (has_custom_logo())
-      {!! get_custom_logo() !!}
-    @else
-      <a href="{{ home_url('/') }}">
-        {!! $siteName !!}
-      </a>
-    @endif
-  </div>
+  <div class="site-container site-header__inner">
+    <div class="site-header__brand">
+      @if (has_custom_logo())
+        {!! get_custom_logo() !!}
+      @else
+        <a href="{{ home_url('/') }}">
+          {!! $siteName !!}
+        </a>
+      @endif
+    </div>
 
     @if (has_nav_menu('primary_navigation'))
       <nav
@@ -25,9 +24,8 @@
       </nav>
     @endif
 
-    <a class="site-header__inquire" href="{{ home_url('/contact/') }}">
+    <a class="button button--outline button--sm" href="{{ home_url('/contact/') }}">
       Inquire
     </a>
-
   </div>
 </header>
