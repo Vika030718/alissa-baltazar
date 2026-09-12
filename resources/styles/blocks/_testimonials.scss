@@ -1,163 +1,92 @@
 @use '../settings/variables' as v;
-
 .testimonials {
-    padding-block: 5rem;
-    background: v.$color-bg;
-    color: v.$color-text;
-    border-bottom: 1px solid v.$color-border;
-
-    &__inner {
-        width: min(100% - (v.$page-gutter * 2),
-                v.$container-max );
-
-        margin-inline: auto;
-    }
-
     &__header {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        gap: 3rem;
-
-        margin-bottom: 3rem;
+        gap: v.$space-12;
+        margin-bottom: v.$space-12;
     }
-
-    &__eyebrow {
-        margin: 0 0 1rem;
-
-        color: v.$color-accent;
-        font-size: 0.625rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-    }
-
-    &__heading {
+    &__header .title {
         max-width: 760px;
-        margin: 0;
-
-        font-family: serif;
-        font-size: clamp(2rem, 3vw, 3rem);
-        font-weight: 400;
-        line-height: 1.05;
     }
-
     &__rating {
         flex-shrink: 0;
-
         color: v.$color-text-muted;
         font-size: 0.7rem;
         text-align: right;
-
         strong {
-            margin-right: 0.25rem;
+            margin-right: v.$space-1;
             color: v.$color-text;
         }
     }
-
     &__stars,
     &__card-stars {
         color: v.$color-accent;
         letter-spacing: 0.15em;
     }
-
     &__stars {
         margin-bottom: 0.35rem;
     }
-
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        gap: v.$space-8;
     }
-
     &__card {
         display: flex;
         flex-direction: column;
         min-height: 310px;
-        padding: 2rem;
-
+        padding: v.$space-8;
         background: rgba(255, 255, 255, 0.015);
         border: 1px solid v.$color-border;
     }
-
     &__card-stars {
-        margin-bottom: 2rem;
+        margin-bottom: v.$space-8;
         font-size: 0.65rem;
     }
-
     &__quote {
         flex: 1;
-
         margin: 0;
-
         color: v.$color-text;
-        font-family: serif;
+        font-family: v.$font-display;
         font-size: 1.25rem;
         font-style: italic;
         line-height: 1.45;
     }
-
     &__author {
         display: flex;
         flex-direction: column;
         gap: 0.2rem;
-
-        margin-top: 2rem;
-        padding-top: 1.25rem;
-
+        margin-top: v.$space-8;
+        padding-top: v.$space-5;
         color: v.$color-text-muted;
         border-top: 1px solid v.$color-border;
-
-        font-size: 0.625rem;
-
+        font-size: v.$font-size-label;
         strong {
             color: v.$color-text;
-            font-weight: 400;
+            font-weight: v.$font-weight-regular;
         }
     }
-
     &__footer {
-        margin-top: 2.5rem;
+        margin-top: v.$space-10;
     }
-
-    &__reviews-link {
-        display: inline-flex;
-        padding: 0.75rem 1.5rem;
-
-        color: v.$color-text;
-        border: 1px solid v.$color-border;
-        border-radius: 999px;
-
-        font-size: 0.625rem;
-        letter-spacing: 0.12em;
-        text-decoration: none;
-        text-transform: uppercase;
-
-        transition:
-            color v.$transition-base,
-            border-color v.$transition-base;
-
-        &:hover,
-        &:focus-visible {
-            color: v.$color-accent;
-            border-color: v.$color-accent;
-        }
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: v.$breakpoint-lg) {
         &__header {
             align-items: flex-start;
             flex-direction: column;
         }
-
         &__rating {
             text-align: left;
         }
-
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: v.$breakpoint-md) {
         &__grid {
             grid-template-columns: 1fr;
         }
-
         &__card {
             min-height: auto;
         }

@@ -1,16 +1,15 @@
 @if ($heading || !empty($stories))
-  <section class="selected-work">
-    <div class="selected-work__inner">
-
+  <section class="site-section site-section--spaced site-section--border-bottom selected-work">
+    <div class="site-container selected-work__inner">
       <header class="selected-work__header">
         @if ($eyebrow)
-          <p class="selected-work__eyebrow">
+          <p class="eyebrow">
             {{ $eyebrow }}
           </p>
         @endif
 
         @if ($heading)
-          <h2 class="selected-work__heading">
+          <h2 class="title title--section">
             {{ $heading }}
           </h2>
         @endif
@@ -20,11 +19,7 @@
         <div class="selected-work__grid">
           @foreach ($stories as $index => $story)
             <article class="selected-work__card">
-
-              <a
-                class="selected-work__image-link"
-                href="{{ $story['url'] }}"
-              >
+              <a class="selected-work__image-link" href="{{ $story['url'] }}">
                 <span class="selected-work__number">
                   {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                 </span>
@@ -40,29 +35,24 @@
               </a>
 
               @if ($story['type'])
-                <p class="selected-work__type">
+                <p class="meta-label">
                   {{ $story['type'] }}
                 </p>
               @endif
 
-              <h3 class="selected-work__title">
+              <h3 class="title title--card">
                 <a href="{{ $story['url'] }}">
                   {{ $story['title'] }}
                 </a>
               </h3>
 
-              <a
-                class="selected-work__link"
-                href="{{ $story['url'] }}"
-              >
+              <a class="text-link text-link--rule" href="{{ $story['url'] }}">
                 View Story
               </a>
-
             </article>
           @endforeach
         </div>
       @endif
-
     </div>
   </section>
 @endif

@@ -1,16 +1,13 @@
 <footer class="site-footer">
-  <div class="site-footer__inner">
-
+  <div class="site-container site-footer__inner">
     <div class="site-footer__brand">
-    
-    @if (has_custom_logo())
-      {!! get_custom_logo() !!}
-    @else
-      <a href="{{ home_url('/') }}">
-        {!! $siteName !!}
-      </a>
-    @endif
-
+      @if (has_custom_logo())
+        {!! get_custom_logo() !!}
+      @else
+        <a href="{{ home_url('/') }}">
+          {!! $siteName !!}
+        </a>
+      @endif
 
       <p class="site-footer__copyright">
         © {{ date('Y') }} Alissa Baltazar Photography
@@ -30,6 +27,5 @@
       <a href="#" target="_blank" rel="noopener noreferrer">Pinterest</a>
       <a href="#" target="_blank" rel="noopener noreferrer">Google Reviews</a>
     </div>
-
   </div>
 </footer>

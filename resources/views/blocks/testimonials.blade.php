@@ -1,16 +1,15 @@
-<section class="testimonials">
-  <div class="testimonials__inner">
-
+<section class="site-section site-section--spaced site-section--border-bottom testimonials">
+  <div class="site-container testimonials__inner">
     <header class="testimonials__header">
       <div>
         @if ($eyebrow)
-          <p class="testimonials__eyebrow">
+          <p class="eyebrow">
             {{ $eyebrow }}
           </p>
         @endif
 
         @if ($heading)
-          <h2 class="testimonials__heading">
+          <h2 class="title title--section">
             {{ $heading }}
           </h2>
         @endif
@@ -39,7 +38,6 @@
       <div class="testimonials__grid">
         @foreach ($testimonials as $testimonial)
           <article class="testimonials__card">
-
             <div class="testimonials__card-stars" aria-hidden="true">
               ★★★★★
             </div>
@@ -52,18 +50,13 @@
 
             <footer class="testimonials__author">
               @if (!empty($testimonial['name']))
-                <strong>
-                  {{ $testimonial['name'] }}
-                </strong>
+                <strong>{{ $testimonial['name'] }}</strong>
               @endif
 
               @if (!empty($testimonial['source']))
-                <span>
-                  {{ $testimonial['source'] }}
-                </span>
+                <span>{{ $testimonial['source'] }}</span>
               @endif
             </footer>
-
           </article>
         @endforeach
       </div>
@@ -72,7 +65,7 @@
     @if ($reviewsUrl)
       <div class="testimonials__footer">
         <a
-          class="testimonials__reviews-link"
+          class="button button--outline"
           href="{{ $reviewsUrl }}"
           target="_blank"
           rel="noopener noreferrer"
@@ -81,6 +74,5 @@
         </a>
       </div>
     @endif
-
   </div>
 </section>

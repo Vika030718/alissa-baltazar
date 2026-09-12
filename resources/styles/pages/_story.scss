@@ -1,111 +1,66 @@
 @use '../settings/variables' as v;
-
 .story {
-    padding-bottom: 6rem;
-    background: v.$color-bg;
-    color: v.$color-text;
-
+    padding-bottom: v.$space-24;
     &__header {
-        width: min(100% - (v.$page-gutter * 2),
-                900px);
-
-        margin-inline: auto;
-        padding-block: 5rem 3rem;
+        padding-block: v.$space-20 v.$space-12;
         text-align: center;
+        .eyebrow {
+            margin-bottom: v.$space-6;
+        }
     }
-
-    &__type {
-        margin: 0 0 1.5rem;
-
-        color: v.$color-accent;
-        font-size: 0.625rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-    }
-
-    &__title {
-        margin: 0;
-
-        font-family: serif;
-        font-size: clamp(3rem, 6vw, 6rem);
-        font-weight: 400;
-        line-height: 0.95;
-        letter-spacing: -0.025em;
-    }
-
     &__hero {
-        width: min(100% - (v.$page-gutter * 2),
-                v.$container-max );
-
         height: min(78svh, 850px);
-        margin-inline: auto;
         overflow: hidden;
     }
-
     &__hero-image {
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-
     &__content {
-        width: min(100% - (v.$page-gutter * 2),
-                1100px);
-
-        margin: 4rem auto 0;
-
+        margin-top: v.$space-16;
         >p,
         >h2,
         >h3,
         >blockquote {
-            max-width: 720px;
+            max-width: v.$container-reading;
             margin-inline: auto;
         }
-
         >p {
             color: v.$color-text-muted;
             line-height: 1.8;
         }
-
         >h2,
         >h3 {
-            margin-top: 4rem;
+            margin-top: v.$space-16;
             color: v.$color-text;
-            font-family: serif;
-            font-weight: 400;
+            font-family: v.$font-display;
+            font-weight: v.$font-weight-regular;
             line-height: 1.1;
         }
-
         >h2 {
             font-size: clamp(2rem, 4vw, 3.5rem);
         }
-
         >h3 {
             font-size: clamp(1.5rem, 3vw, 2.5rem);
         }
-
         .wp-block-image {
-            margin-block: 3rem;
-
+            margin-block: v.$space-12;
             img {
                 display: block;
                 width: 100%;
                 height: auto;
             }
         }
-
         .wp-block-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            margin-block: 4rem;
-
+            gap: v.$space-4;
+            margin-block: v.$space-16;
             .wp-block-image {
                 width: 100% !important;
                 margin: 0;
-
                 img {
                     width: 100%;
                     height: 100%;
@@ -114,45 +69,44 @@
                 }
             }
         }
-
         blockquote {
-            margin-block: 5rem;
-            padding-block: 2rem;
-
+            margin-block: v.$space-20;
+            padding-block: v.$space-8;
             color: v.$color-text;
             border-top: 1px solid v.$color-border;
             border-bottom: 1px solid v.$color-border;
-
-            font-family: serif;
+            font-family: v.$font-display;
             font-size: clamp(1.75rem, 3vw, 2.75rem);
             font-style: italic;
             line-height: 1.25;
             text-align: center;
         }
     }
-
-    @media (max-width: 768px) {
+    @media (max-width: v.$breakpoint-md) {
         &__header {
-            padding-block: 3rem 2rem;
+            padding-block: v.$space-12 v.$space-8;
         }
-
         &__hero {
-            width: calc(100% - 2rem);
             height: min(65svh, 600px);
         }
-
         &__content {
-            width: calc(100% - 2rem);
-            margin-top: 2.5rem;
-
+            margin-top: v.$space-10;
             .wp-block-gallery {
                 grid-template-columns: 1fr;
-                gap: 0.75rem;
-
+                gap: v.$space-3;
                 .wp-block-image img {
                     min-height: auto;
                 }
             }
+        }
+    }
+    @media (max-width: v.$breakpoint-sm) {
+        padding-bottom: v.$space-16;
+        &__header {
+            padding-block: v.$space-10 v.$space-6;
+        }
+        &__content {
+            margin-top: v.$space-8;
         }
     }
 }

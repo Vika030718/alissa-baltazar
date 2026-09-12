@@ -1,6 +1,6 @@
 @if (!empty($stats))
-  <section class="stats">
-    <div class="stats__inner">
+  <section class="site-section site-section--border-top site-section--border-bottom stats">
+    <div class="site-container stats__inner">
       @foreach ($stats as $stat)
         <div class="stats__item">
           @if (!empty($stat['value']))
@@ -10,7 +10,7 @@
           @endif
 
           @if (!empty($stat['label']))
-            <div class="stats__label">
+            <div class="meta-label">
               {{ $stat['label'] }}
             </div>
           @endif

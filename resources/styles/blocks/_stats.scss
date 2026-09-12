@@ -1,52 +1,50 @@
 @use '../settings/variables' as v;
-
 .stats {
-    background: v.$color-bg;
-    color: v.$color-text;
-    border-top: 1px solid v.$color-border;
-    border-bottom: 1px solid v.$color-border;
-
     &__inner {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-
-        width: min(100% - (v.$page-gutter * 2), v.$container-max);
-        margin-inline: auto;
     }
-
     &__item {
-        padding: 2.5rem 2rem;
-
+        padding: v.$space-10 v.$space-8;
         &:not(:last-child) {
             border-right: 1px solid v.$color-border;
         }
     }
-
     &__value {
-        margin-bottom: 0.5rem;
-        font-size: 1.5rem;
+        margin-bottom: v.$space-2;
         color: v.$color-text;
+        font-size: 1.5rem;
     }
-
-    &__label {
-        font-size: 0.625rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+    .meta-label {
         color: v.$color-text-muted;
+        letter-spacing: v.$tracking-control;
     }
-
-    @media (max-width: 768px) {
+    @media (max-width: v.$breakpoint-md) {
         &__inner {
             grid-template-columns: repeat(2, 1fr);
         }
-
         &__item {
             &:nth-child(2) {
                 border-right: 0;
             }
-
             &:nth-child(-n + 2) {
                 border-bottom: 1px solid v.$color-border;
+            }
+        }
+    }
+    @media (max-width: v.$breakpoint-sm) {
+        &__inner {
+            grid-template-columns: 1fr;
+        }
+        &__item {
+            padding: v.$space-8 v.$space-6;
+            &:not(:last-child) {
+                border-right: 0;
+                border-bottom: 1px solid v.$color-border;
+            }
+            &:last-child {
+                border-right: 0;
+                border-bottom: 0;
             }
         }
     }

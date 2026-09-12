@@ -1,0 +1,18 @@
+@use '../settings/variables' as v;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html {
+    background: v.$color-bg;
+}
+body {
+    margin: 0;
+    background: v.$color-bg;
+    color: v.$color-text;
+    font-family: v.$font-body;
+}
+img {
+    max-width: 100%;
+}
